@@ -4,7 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "play-lh.googleusercontent.com",
+        port: "",
+      },
+
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
         port: "",
       },
     ],
