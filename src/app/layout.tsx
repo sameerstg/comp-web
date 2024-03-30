@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Balsamiq_Sans, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  // fallback inter
+  // fallback: ["inter var", "inter", "sans-serif"],
+});
+
+const balsamiq_sans = Balsamiq_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +30,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="relative min-h-screen flex flex-col transition-colors duration-700">
+            <Header />
+            {/* <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#27272A_1px,transparent_1px)] [background-size:24px_24px]"></div> */}
+            {/* <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 light-bg  dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> */}
+            {/* <div className="fixed left-0 top-0 -z-10 h-full w-full"> */}
+            {/* <div className="absolute inset-0 -z-10 h-full w-full  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]" />
+              </div> */}
+            {/* <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#8f8f8f_0.1px,transparent_1px)] dark:bg-[radial-gradient(#1f2129_1px,transparent_1px)] [background-size:16px_16px]" /> */}
+            {/* </div> */}
+
+            <main
+              // add animation here animate every time the page changes or the route changes
+              // fadeout and fadein move to left
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // exit={{ opacity: 0 }}
+              // transition={{ duration: 0.5 }}
+              // initial={{ opacity: 0, x: -100 }}
+              // animate={{ opacity: 1, x: 0 }}
+              // exit={{ opacity: 0, x: 100 }}
+              // transition={{ duration: 0.5 }}
+              className="flex-1 flex items-center flex-col pt-[70px]"
+            >
+              {children}
+            </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
