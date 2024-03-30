@@ -1,4 +1,5 @@
-import { link } from "fs"
+import { Portfolio } from "@/components/PortfolioCarousel"
+
 
 export const mobileAppsPortfolio: any = [
     // {
@@ -66,7 +67,7 @@ export const mobileAppsPortfolio: any = [
 
 
 ]
-export const mobileGamesPortfolio: any = [
+export const mobileGamesPortfolio: Portfolio[] = [
     {
         link: "https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame",
         images: [
@@ -139,11 +140,13 @@ export const websitePortfolio: any = [
     },
 
 ]
-export const vrPortfolio: any = [
+export const vrPortfolio: Portfolio[] = [
     {
         link: "https://www.meta.com/experiences/7159569204093541/#?",
         images: [
 
+            "https://i.imgur.com/KUxHOVS.png",
+            "https://i.imgur.com/KUxHOVS.png",
             "https://i.imgur.com/KUxHOVS.png",
         ]
     },
