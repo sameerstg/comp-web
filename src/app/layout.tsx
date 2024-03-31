@@ -3,6 +3,7 @@ import { Balsamiq_Sans, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -63,6 +64,8 @@ export default function RootLayout({
             >
               {children}
             </main>
+
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
