@@ -1,22 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const ScrollDownAnimation = () => {
   // when button is clicked, scroll down to the next section of the page smoothly
   const handleClick = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+    const portfolioElement = document.getElementById("portfolio");
+    if (portfolioElement) {
+      window.scrollTo({
+        // top: portfolioElement.offsetTop,
+
+        top: portfolioElement.offsetHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <>
       {/* #TODO: add functionality to scroll down to the next section */}
       <motion.button
-        className="relative h-[200px]"
+        className="relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

@@ -1,6 +1,11 @@
-import { link } from "fs";
+interface PortfolioItem {
+  titlle?: string;
+  description?: string;
+  link: string;
+  items?: any[];
+}
 
-export const mobileAppsPortfolio: any = [
+export const mobileAppsPortfolio: PortfolioItem[] = [
   // {
 
   //     link: "https://apps.apple.com/gb/app/moimo/id6469349579",
@@ -10,49 +15,56 @@ export const mobileAppsPortfolio: any = [
   // },
 
   {
-    link: "https://apps.apple.com/us/app/sacis-studio/id644",
-    images: [
-      "https://play-lh.googleusercontent.com/kEiaZw5yMxuqnUpqSOAzEMmImhlF7Dw01Xdlx3sZDGOP74ImV_dsWSdAkLhCQqujNOw=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/iUpVYDxD6TFOvbHEXsuopDQ2HigeeIrWRKpXRLM-TwYyWtiXm4pRT9FALn0c_ozXx60=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/BnWqaaZPOM3qr8JLRcfinWtYMxoaRDNte3fKIYl5tRAm0spPqey1Uco02FtC63aBgQPF=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/I0zl0y4H1i8uJRUy4KLv9G2m1lRkqzb9lLFyeYyr2m7nRcCGb8nCiP3DwicpBv2R1g=w526-h296-rw",
-    ],
-  },
-  {
-    link: "https://apps.apple.com/us/app/sha-guidelines/id6475668208",
+    titlle: "Mobile App Portfolio",
+    description: "Some of the mobile apps we have developed",
+    link: "https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame",
+    items: [
+      {
+        link: "https://apps.apple.com/us/app/sacis-studio/id644",
+        images: [
+          "https://play-lh.googleusercontent.com/kEiaZw5yMxuqnUpqSOAzEMmImhlF7Dw01Xdlx3sZDGOP74ImV_dsWSdAkLhCQqujNOw=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/iUpVYDxD6TFOvbHEXsuopDQ2HigeeIrWRKpXRLM-TwYyWtiXm4pRT9FALn0c_ozXx60=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/BnWqaaZPOM3qr8JLRcfinWtYMxoaRDNte3fKIYl5tRAm0spPqey1Uco02FtC63aBgQPF=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/I0zl0y4H1i8uJRUy4KLv9G2m1lRkqzb9lLFyeYyr2m7nRcCGb8nCiP3DwicpBv2R1g=w526-h296-rw",
+        ],
+      },
+      {
+        link: "https://apps.apple.com/us/app/sha-guidelines/id6475668208",
 
-    images: [
-      "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/t5aJTAoNHst8ZJ_pW0ipVdKHuMuk6bfM6PQn-i2SYKQpZMNEfoRyHPPcjdxP5QUufQ=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/x2PdsL-OSXgWSsFDvCfufDmaI34rnwyNP4iFg2F1MacQomDOHi0Vx-86Cb4JJX455fI=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/JgKlRxqncKUt51w42rdpWJUUnV0gRthsDpcTB7c2OBdnFaCTuH5XEGXdxdbLCdQv9VQ=w526-h296-rw",
-    ],
-  },
-  {
-    link: "https://apps.apple.com/us/app/sirs-2023/id6458100492",
-    images: [
-      "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/pysiAkeTKcWVvakzEoTYTwPMKu5kIHtr5OvhTKo1oF4xlqso40H5vMVMVMefeSmc7AE=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/i-JAnuc0y9rM0tCUlyrZy1AylQMz9dZ1WhOqU4yIjWVIAkcpbZcn34p-qWJJC9NHPg=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/EKqLy3bFZx72-UamFXNOPDjeJoYC793CkR5ACnHn5nUCjVbxi3zPO4JXO7563G4mI4U7=w526-h296-rw",
-    ],
-  },
-  {
-    link: "https://play.google.com/store/apps/details?id=com.cmolds.apps.foodsnapp",
-    images: [
-      "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/IrjUk6twQkFXK6f8OsiAElyVoLQDXe9Xz1CBSil2brWpqMOxqfgqkA6OwNpTcocCaig=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/8K_dS78OcXLOThmXeuZO-8OPK7zq5H5XQ2y0wuRWCscvlLc6HOL19EDNcvjUxO2N4Xpg=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/vKLcwF5JihjbVApnI16SBgNP1aQE2F13D1kNBOfxuCFwvpG-KUId-yu4dj1mBrfw6GE=w526-h296-rw",
-    ],
-  },
-  {
-    link: "https://play.google.com/store/apps/details?id=com.toypins",
-    images: [
-      "https://play-lh.googleusercontent.com/B8aAt16xY7a0hbZ-bmXOqu5BEQP-hXTbV-qiQMSPD78dRzAcQdNsP4MB7Rk_rCGRG1A=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/v7gQ9nImqrk-xBi-gdWgGaJ68CYvo59o48K0Ov_p9GaU33Cb4yYzpmecY15XNG5B_gQ=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/B8aAt16xY7a0hbZ-bmXOqu5BEQP-hXTbV-qiQMSPD78dRzAcQdNsP4MB7Rk_rCGRG1A=w526-h296-rw",
-      "https://play-lh.googleusercontent.com/Y5vtsXFMLEbz5iBRKU3IGXV21NeeDS_UFRHw__ziOGnebQb25aUJqhtLhH79N9RwOw=w526-h296-rw",
+        images: [
+          "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/t5aJTAoNHst8ZJ_pW0ipVdKHuMuk6bfM6PQn-i2SYKQpZMNEfoRyHPPcjdxP5QUufQ=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/x2PdsL-OSXgWSsFDvCfufDmaI34rnwyNP4iFg2F1MacQomDOHi0Vx-86Cb4JJX455fI=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/JgKlRxqncKUt51w42rdpWJUUnV0gRthsDpcTB7c2OBdnFaCTuH5XEGXdxdbLCdQv9VQ=w526-h296-rw",
+        ],
+      },
+      {
+        link: "https://apps.apple.com/us/app/sirs-2023/id6458100492",
+        images: [
+          "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/pysiAkeTKcWVvakzEoTYTwPMKu5kIHtr5OvhTKo1oF4xlqso40H5vMVMVMefeSmc7AE=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/i-JAnuc0y9rM0tCUlyrZy1AylQMz9dZ1WhOqU4yIjWVIAkcpbZcn34p-qWJJC9NHPg=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/EKqLy3bFZx72-UamFXNOPDjeJoYC793CkR5ACnHn5nUCjVbxi3zPO4JXO7563G4mI4U7=w526-h296-rw",
+        ],
+      },
+      {
+        link: "https://play.google.com/store/apps/details?id=com.cmolds.apps.foodsnapp",
+        images: [
+          "https://play-lh.googleusercontent.com/Fnxpfmyew7a4-WfbL3rBbAKWMBzAFpoX3NEM-8jizgUNE_pIICIojJOvaWF70RdfXK90=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/IrjUk6twQkFXK6f8OsiAElyVoLQDXe9Xz1CBSil2brWpqMOxqfgqkA6OwNpTcocCaig=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/8K_dS78OcXLOThmXeuZO-8OPK7zq5H5XQ2y0wuRWCscvlLc6HOL19EDNcvjUxO2N4Xpg=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/vKLcwF5JihjbVApnI16SBgNP1aQE2F13D1kNBOfxuCFwvpG-KUId-yu4dj1mBrfw6GE=w526-h296-rw",
+        ],
+      },
+      {
+        link: "https://play.google.com/store/apps/details?id=com.toypins",
+        images: [
+          "https://play-lh.googleusercontent.com/B8aAt16xY7a0hbZ-bmXOqu5BEQP-hXTbV-qiQMSPD78dRzAcQdNsP4MB7Rk_rCGRG1A=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/v7gQ9nImqrk-xBi-gdWgGaJ68CYvo59o48K0Ov_p9GaU33Cb4yYzpmecY15XNG5B_gQ=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/B8aAt16xY7a0hbZ-bmXOqu5BEQP-hXTbV-qiQMSPD78dRzAcQdNsP4MB7Rk_rCGRG1A=w526-h296-rw",
+          "https://play-lh.googleusercontent.com/Y5vtsXFMLEbz5iBRKU3IGXV21NeeDS_UFRHw__ziOGnebQb25aUJqhtLhH79N9RwOw=w526-h296-rw",
+        ],
+      },
     ],
   },
 ];
