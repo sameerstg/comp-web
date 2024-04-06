@@ -6,7 +6,7 @@ import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 export default function page() {
   return (
-    <div className="">
+    <div className="mx-2">
 
       <PortfolioCarousel portfolioArray={mobileAppsPortfolio} />
       <PortfolioCarousel portfolioArray={mobileGamesPortfolio} />
