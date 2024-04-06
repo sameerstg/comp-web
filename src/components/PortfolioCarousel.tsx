@@ -18,8 +18,27 @@ export default function PortfolioCarousel(props: props) {
             <CarouselContent className=''>
                 {props.portfolioArray.map((_, index) => (
                     <CarouselItem key={index} className='h-full'>
-                        {/* <div className=" text-4xl text-center  font-semibold">{index + 1}</div> */}
-                        <Image className="mx-auto h-full w-auto" src={_.images ? _.images[0] : ""} alt="none" width={2000} height={2000} />
+                        <div className='flex h-[50vh] w-full mx-auto justify-center'>
+                            {_.images ? _.images.length > 1 ?
+
+                                // if image more than one {use for less width image}
+                                <div className='flex'>
+                                    {_.images.map((image, index1) => (
+                                        <Image key={index1} className="w-auto" src={image} alt="none" width={2000} height={2000} />
+
+
+
+                                    ))}
+                                </div>
+                                :
+                                // if image is one {use for big image}
+                                <Image className="w-auto mx-auto" src={_.images ? _.images[0] : ""} alt="none" width={2000} height={2000} />
+
+                                : null}
+                        </div>
+
+
+
                     </CarouselItem>
                 ))}
             </CarouselContent>

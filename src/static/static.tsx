@@ -146,8 +146,6 @@ export const vrPortfolio: Portfolio[] = [
         images: [
 
             "https://i.imgur.com/KUxHOVS.png",
-            "https://i.imgur.com/KUxHOVS.png",
-            "https://i.imgur.com/KUxHOVS.png",
         ]
     },
 ]
