@@ -23,8 +23,8 @@ export default function PortfolioCarousel(props: props) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            {/* <CarouselPrevious /> */}
-            {/* <CarouselNext /> */}
+            <CarouselPrevious />
+            <CarouselNext />
         </Carousel>
     );
 }
