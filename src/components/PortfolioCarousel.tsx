@@ -1,37 +1,30 @@
-import { Portfolio } from '@/static/static';
 import React from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import Image from 'next/image';
-interface props{
-    portfolioArray:Portfolio[];
+
+
+export interface Portfolio {
+    link?: string;
+    images?: string[];
+
 }
-export default function PortfolioCarousel(props: props){
+interface props {
+    portfolioArray: Portfolio[];
+}
+export default function PortfolioCarousel(props: props) {
     return (
-        <div className="flex flex-col justify-center items-center align-middle h-[calc(100vh-80px)] w-2/3">
-            <Carousel className="w-full mx-auto">
-                <CarouselContent className="">
 
-                    {props.portfolioArray.map((_: Portfolio, index1: any) => (
-
-                        <div key={index1} className="w-full mx-auto flex justify-center">
-                            {_.images?.map((image, index2) => (
-                                <div key={index2} className="">
-                                    <CarouselItem className=" md:basis-1/1 lg:basis-1/1">
-
-
-                                        <Image className="w-full mx-auto" src={image} alt="none" width={100} height={100} />
-
-                                    </CarouselItem>
-                                </div>
-
-
-                            ))}
-                        </div>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
-        </div>
+        <Carousel className="h-[calc(100vh-120px)] flex flex-col justify-center align-middle">
+            <CarouselContent className=''>
+                {props.portfolioArray.map((_, index) => (
+                    <CarouselItem key={index} className='h-full'>
+                        {/* <div className=" text-4xl text-center  font-semibold">{index + 1}</div> */}
+                        <Image className="mx-auto h-full w-auto" src={_.images ? _.images[0] : ""} alt="none" width={2000} height={2000} />
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+            {/* <CarouselPrevious /> */}
+            {/* <CarouselNext /> */}
+        </Carousel>
     );
 }

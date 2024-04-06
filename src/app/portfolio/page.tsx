@@ -1,11 +1,12 @@
 import React from "react";
 
-import { characterDesignPortfolio, mobileAppsPortfolio, mobileGamesPortfolio, modellingPortfolio, Portfolio, uiUxPortfolio, vrPortfolio, webAppPortfolio, websitePortfolio } from "@/static/static";
+import { characterDesignPortfolio, mobileAppsPortfolio, mobileGamesPortfolio, modellingPortfolio, uiUxPortfolio, vrPortfolio, webAppPortfolio, websitePortfolio } from "@/static/static";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
 
-export default function page(props: Portfolio[]) {
+
+export default function page() {
   return (
-    <div className="">
+    <div className="mx-2">
 
       <PortfolioCarousel portfolioArray={mobileAppsPortfolio} />
       <PortfolioCarousel portfolioArray={mobileGamesPortfolio} />

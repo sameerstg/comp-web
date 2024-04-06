@@ -1,9 +1,6 @@
-import { link } from "fs"
-export interface Portfolio {
-    link?: string;
-    images?: string[];
+import { Portfolio } from "@/components/PortfolioCarousel"
 
-}
+
 export const mobileAppsPortfolio: any = [
     // {
 
