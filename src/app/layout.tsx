@@ -3,6 +3,8 @@ import { Balsamiq_Sans, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -38,13 +40,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen flex flex-col transition-colors duration-700">
-            <Header />
+            <div className="bg-transparent">
+              {/* <Header /> */}
+              <Navbar />
+            </div>
             {/* <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#27272A_1px,transparent_1px)] [background-size:24px_24px]"></div> */}
             {/* <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 light-bg  dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> */}
             {/* <div className="fixed left-0 top-0 -z-10 h-full w-full"> */}
-            {/* <div className="absolute inset-0 -z-10 h-full w-full  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]" />
-              </div> */}
+            <div className="absolute inset-0 -z-10 h-full w-full  bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+              <div className="absolute left-0 right-0 top-0 bottom-48 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]" />
+            </div>
             {/* <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#8f8f8f_0.1px,transparent_1px)] dark:bg-[radial-gradient(#1f2129_1px,transparent_1px)] [background-size:16px_16px]" /> */}
             {/* </div> */}
 
@@ -63,6 +68,8 @@ export default function RootLayout({
             >
               {children}
             </main>
+
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
