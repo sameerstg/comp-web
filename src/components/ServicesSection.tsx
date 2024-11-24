@@ -68,7 +68,7 @@
 "use client";
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { portfolio } from "@/static/data";
+import { portfolios } from "@/static/data";
 import { motion } from "framer-motion";
 
 export default function Services() {
@@ -84,7 +84,7 @@ export default function Services() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 1,
-          delay: 0.3,
+          delay: 0.1,
           type: "spring",
           stiffness: 120,
         }}
@@ -93,7 +93,7 @@ export default function Services() {
         <h1 className="text-3xl md:text-6xl font-semibold md:font-bold text-center py-5">
           Services
         </h1>
-        <HoverEffect items={portfolio} />
+        <HoverEffect items={portfolios} />
       </motion.div>
     </motion.div>
   );

@@ -1,46 +1,74 @@
-import React from 'react'
+'use client';
+import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import Image from 'next/image';
+import { ImageType, Portfolio } from '@/static/data';
+import Link from 'next/link';
 
-
-export interface Portfolio {
-    link?: string;
-    images?: string[];
-
+interface Props {
+    portfolio: Portfolio;
 }
-interface props {
-    portfolioArray: Portfolio[];
+
+function chunkArray<T>(array: T[], size: number): T[][] {
+    const chunks: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+        chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
 }
-export default function PortfolioCarousel(props: props) {
+
+export default function PortfolioCarousel({ portfolio }: Props) {
     return (
-
         <Carousel className="h-[calc(100vh-120px)] flex flex-col justify-center align-middle">
-            <CarouselContent className=''>
-                {props.portfolioArray.map((_, index) => (
-                    <CarouselItem key={index} className='h-full'>
-                        <div className='flex h-[50vh] w-full mx-auto justify-center'>
-                            {_.images ? _.images.length > 1 ?
-
-                                // if image more than one {use for less width image}
-                                <div className='flex'>
-                                    {_.images.map((image, index1) => (
-                                        <Image key={index1} className="w-auto" src={image} alt="none" width={2000} height={2000} />
-
-
-
-                                    ))}
-                                </div>
-                                :
-                                // if image is one {use for big image}
-                                <Image className="w-auto mx-auto" src={_.images ? _.images[0] : ""} alt="none" width={2000} height={2000} />
-
-                                : null}
-                        </div>
-
-
-
-                    </CarouselItem>
-                ))}
+            <Link href={`/portfolio/${portfolio.id}`}>
+                <div className="w-full text-center text-5xl font-bold mb-4 cursor-pointer hover:underline">
+                    {portfolio.title}
+                </div>
+            </Link>
+            <CarouselContent>
+                {portfolio.items.map((item, index) => {
+                    if (item.imagesType === ImageType.landscape) {
+                        const landscapeImage = item?.images?.[0];
+                        return (
+                            <CarouselItem key={index} className="h-full flex items-center justify-center">
+                                <Link href={item.link} target="_blank" className="h-full w-full flex justify-center">
+                                    {landscapeImage && (
+                                        <Image
+                                            className="object-contain h-[calc(50vh-40px)] w-auto"
+                                            src={landscapeImage}
+                                            alt="Landscape Image"
+                                            width={1920}
+                                            height={1080}
+                                        />
+                                    )}
+                                </Link>
+                            </CarouselItem>
+                        );
+                    } else {
+                        const groupedImages = item.images ? chunkArray(item.images, 4) : [];
+                        return groupedImages.map((group, groupIndex) => (
+                            <CarouselItem
+                                key={`${index}-${groupIndex}`}
+                                className="h-full flex items-center justify-center"
+                            >
+                                <Link href={item.link} target="_blank" className="h-full w-full flex justify-center">
+                                    <div className="grid grid-cols-4">
+                                        {group.map((image, imgIndex) => (
+                                            <Image
+                                                key={imgIndex}
+                                                className="object-contain h-[calc(50vh-40px)] w-auto"
+                                                src={image}
+                                                alt="Portrait Image"
+                                                width={500}
+                                                height={750}
+                                            />
+                                        ))}
+                                    </div>
+                                </Link>
+                            </CarouselItem>
+                        ));
+                    }
+                })}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />

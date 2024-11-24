@@ -45,7 +45,7 @@ export default function Footer() {
                 repudiandae, provident velit earum?
               </p>
             </div>
-            <div className="mt-6 flex justify-center gap-4 lg:justify-start">
+            <div className="mt-6 flex justify-center gap-4 lg:justify-end">
               <Link className="" href="#" target="_blank" rel="noreferrer">
                 <span className="sr-only"> Facebook </span>
 
@@ -110,7 +110,7 @@ export default function Footer() {
                 </svg>
               </Link>
 
-              <Link className="" href="#" target="_blank" rel="noreferrer">
+              {/* <Link className="" href="#" target="_blank" rel="noreferrer">
                 <span className="sr-only"> Dribbble </span>
 
                 <svg
@@ -125,7 +125,7 @@ export default function Footer() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
             {/* <div className="grid grid-cols-2 gap-8 text-center lg:grid-cols-3 lg:text-left">
               <div>
@@ -224,7 +224,7 @@ export default function Footer() {
 
           <div className="mt-16 border-t border-gray-100 pt-8">
             <p className="text-center text-xs/relaxed">
-              © Company 2022. All rights reserved. .
+              © Company 2024. All rights reserved. 
             </p>
           </div>
         </div>

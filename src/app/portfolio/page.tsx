@@ -1,21 +1,19 @@
 import React from "react";
 
-import { characterDesignPortfolio, mobileAppsPortfolio, mobileGamesPortfolio, modellingPortfolio, uiUxPortfolio, vrPortfolio, webAppPortfolio, websitePortfolio } from "@/static/static";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import { portfolios } from "@/static/data";
 
 
 export default function page() {
   return (
     <div className="mx-2">
+      {
+        portfolios.map((portfolio, key) => (<div key={key}>
 
-      <PortfolioCarousel portfolioArray={mobileAppsPortfolio} />
-      <PortfolioCarousel portfolioArray={mobileGamesPortfolio} />
-      <PortfolioCarousel portfolioArray={webAppPortfolio} />
-      <PortfolioCarousel portfolioArray={vrPortfolio} />
-      <PortfolioCarousel portfolioArray={uiUxPortfolio} />
-      <PortfolioCarousel portfolioArray={websitePortfolio} />
-      <PortfolioCarousel portfolioArray={characterDesignPortfolio} />
-      <PortfolioCarousel portfolioArray={modellingPortfolio} />
+          <PortfolioCarousel portfolio={portfolio} />
+
+        </div>))
+      }
 
     </div>
   );

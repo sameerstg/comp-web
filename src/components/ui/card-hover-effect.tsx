@@ -4,13 +4,13 @@ import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { PortfolioCategory } from "@/static/data";
+import { Portfolio } from "@/static/data";
 
 export const HoverEffect = ({
   items,
   className,
 }: {
-  items: PortfolioCategory[];
+  items: Portfolio[];
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -42,7 +42,7 @@ export const HoverEffect = ({
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
+                  transition: { duration: 0.15, delay: 0 },
                 }}
               />
             )}
